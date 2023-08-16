@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  imports: [CommonModule],
+  template: `
+<div *ngIf='data() as data'>
+  <h1>Some Random Data Points:</h1>
+  <p>{{data.dataPoint1}}</p>
+  <p>{{data.dataPoint2}}</p>
+  <p>{{data.dataPoint3}}</p>
+</div>
+  `,
+  styles: [``],
+  standalone: true,
 })
 export class AppComponent {
-  title = 'mre--angular-highlighting-definition';
+  data = signal({dataPoint1: 2, dataPoint2: 'hello', dataPoint3: true})
 }
