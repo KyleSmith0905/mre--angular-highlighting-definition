@@ -6,6 +6,7 @@ import { Component, signal } from '@angular/core';
   imports: [CommonModule],
   template: `
 <div *ngIf='data() as data'>
+  <!-- Beyond this point does not have HTML highlighting -->
   <h1>Some Random Data Points:</h1>
   <p>{{data.dataPoint1}}</p>
   <p>{{data.dataPoint2}}</p>
